@@ -1,58 +1,33 @@
 package com.catalogprojectservice.catalogprojectservice.model;
 
 
+import javax.persistence.*;
 import java.util.List;
 
 
-
-import java.util.List;
-
-
-import javax.persistence.Column;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 @Entity
-@ApiModel("Description of user model")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long Id;
 	
-	
-	@ApiModelProperty(notes = "first name must have at least 3 characters")
 	private String firstName;
 	
-	
-	@ApiModelProperty(notes = "last name must have at least 3 characters")
 	private String lastName;
 	
-	
 	@Column(unique=true)
-	@ApiModelProperty(notes = "username must be unique")
 	private String username;
 	
 	
 	@Column(unique=true)
-	@ApiModelProperty(notes = "email must be unique")
 	private String email;
 	
 	
-	@ApiModelProperty(notes = "telephone must be unique")
 	@Column(unique=true)
 	private String telephone;
 	
 	
-	@ApiModelProperty(notes = "password must have at least 8 characters")
 	private String password;
 	
 	

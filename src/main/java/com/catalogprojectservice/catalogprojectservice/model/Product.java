@@ -32,15 +32,7 @@ public class Product {
 	@JsonIgnore
 	private Category category;
 	
-	/**
-	 * @param id
-	 * @param name
-	 * @param description
-	 * @param quantity
-	 * @param price
-	 * @param image
-	 * @param categoryId
-	 */
+
 	public Product(Long id, String name, String description, Integer quantity, BigDecimal price, byte[] image, Category category,
 			int currency) {
 		super();

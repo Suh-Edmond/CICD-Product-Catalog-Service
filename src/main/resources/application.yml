@@ -17,3 +17,7 @@ jwt:
   secret: secretkey
   expiration: 86400000
 
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

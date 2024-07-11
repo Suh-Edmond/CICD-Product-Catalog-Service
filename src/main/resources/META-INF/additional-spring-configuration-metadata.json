@@ -4,5 +4,10 @@
       "name": "spring.application",
       "type": "java.lang.String",
       "description": "Description for spring.application."
-  }
-] }
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Description for jwt.secret."
+    }
+  ] }

@@ -27,17 +27,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	AuthenticationService authenticationService;
 
 	@Autowired
-	AuthEntryPointJwt unauthorizedHandler; 
+	AuthEntryPointJwt unauthorizedHandler;
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-				.antMatchers("/api/auth/**").permitAll().antMatchers("/api/category-list").permitAll()
-				.antMatchers("/api/products").permitAll().antMatchers("/api/all-products").permitAll()
-				.antMatchers("/swagger-ui/**").permitAll().antMatchers("/swagger-ui.html").permitAll()
-				.antMatchers("/swagger-resources/**").permitAll().antMatchers("/v2/**").permitAll().anyRequest()
+				.antMatchers("/api/public/**").permitAll()
+				.antMatchers("/swagger-ui/**").permitAll()
+				.antMatchers("/v3/**").permitAll()
+				.antMatchers("/swagger-ui/index.html").permitAll()
+				.antMatchers( "/swagger-resources/**").permitAll()
+				.antMatchers("/api/protected/**")
 				.authenticated();
+
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 

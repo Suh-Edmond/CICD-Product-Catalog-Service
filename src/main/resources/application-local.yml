@@ -4,7 +4,7 @@ spring:
       enabled: false
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/product_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/product_catalog_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: Summer123!
   jpa:
@@ -13,3 +13,10 @@ spring:
       ddl-auto: update
 server:
   port: 8000
+
+logging:
+  level:
+    net:
+      gogroups:
+        client:
+          RequestResponseLoggingInterceptor: DEBUG
