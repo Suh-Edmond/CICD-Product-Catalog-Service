@@ -30,4 +30,8 @@ jobs:
         cache: maven
     - name: Test and Build with Maven
       run: mvn verify package
+    - name: Copy jar file
+      run: mkdir jar-file/catalog-product-service && cp target/*.jar jar-file/catalog-product-service
+    - name: List out content of jar file
+      run: ls -l jar-file/catalog-product-service
 
