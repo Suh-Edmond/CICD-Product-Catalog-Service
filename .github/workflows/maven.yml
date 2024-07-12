@@ -31,9 +31,9 @@ jobs:
     - name: Test and Build with Maven
       run: mvn verify package
     - name: Copy jar file
-      run: mkdir jar-file/catalog-product-service && cp target/*.jar jar-file/catalog-product-service
-    - name: List out content of jar file
-      run: ls -l jar-file/catalog-product-service
+      run: mkdir jar_files && cp target/*.jar jar_files
+    - name: List out content of jar_files
+      run: ls -l jar_files
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
       with:
