@@ -35,7 +35,7 @@ jobs:
     - name: List out content of jar_files
       run: ls -l jar_files
     - uses: mr-smithers-excellent/docker-build-push@v6
-      name: Build & push Docker image
+      name: Build & Push Docker image
       with:
         image: suh-eddy/catalog-product-service
         tags: latest
