@@ -34,4 +34,12 @@ jobs:
       run: mkdir jar-file/catalog-product-service && cp target/*.jar jar-file/catalog-product-service
     - name: List out content of jar file
       run: ls -l jar-file/catalog-product-service
-
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
+      with:
+        image: suh-eddy/catalog-product-service
+        tags: latest
+        registry: registry-url.io
+        dockerfile: Dockerfile.ci
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
